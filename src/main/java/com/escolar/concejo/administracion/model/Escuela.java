@@ -1,29 +1,25 @@
 package com.escolar.concejo.administracion.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-
-
 
 @Entity
-@Table(name = "zona")
-public class Zona {
+@Table(name = "escuela")
+public class Escuela {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank
 	private String nombre;
 	
-	@OneToMany(mappedBy="zona")
-	private List<Escuela> escuelas;
+	@ManyToOne(optional = false)
+	@JoinColumn(name="zona")
+	private Zona zona;
 
 	public Long getId() {
 		return id;
@@ -40,6 +36,17 @@ public class Zona {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
+	public Zona getZona() {
+		return zona;
+	}
+
+	public void setZona(Zona zona) {
+		this.zona = zona;
+	}
+	
+	
+	
 	
 	
 }

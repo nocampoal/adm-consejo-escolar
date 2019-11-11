@@ -26,7 +26,6 @@ public class ZoneServiceImpl implements ZoneService{
 
 	@Override
 	public Zona getZoneById(Long idZone) {
-		
 		return zoneRepository.findById(idZone).get();
 	}
 }
