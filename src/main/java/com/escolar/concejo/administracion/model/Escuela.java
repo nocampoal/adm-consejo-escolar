@@ -17,8 +17,8 @@ public class Escuela {
 	
 	private String nombre;
 	
-	@ManyToOne(optional = false)
-	@JoinColumn(name="zona")
+	@ManyToOne
+	@JoinColumn(name="idZona")
 	private Zona zona;
 	private String direccion;
 	private String director;

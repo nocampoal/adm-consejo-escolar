@@ -10,6 +10,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 
 @Entity
@@ -23,6 +25,7 @@ public class Zona {
 	private String nombre;
 	
 	@OneToMany(mappedBy="zona")
+	@JsonIgnore
 	private List<Escuela> escuelas;
 
 	
