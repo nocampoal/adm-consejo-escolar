@@ -13,20 +13,27 @@ import javax.persistence.Table;
 public class Escuela {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long id_escuela;
 	
 	private String nombre;
 	
 	@ManyToOne(optional = false)
 	@JoinColumn(name="zona")
 	private Zona zona;
+	private String direccion;
+	private String director;
+	private Long cupomc;
+	private Long cupoComedor;
+	private String nombreInstitucion; // 
 
-	public Long getId() {
-		return id;
+	
+
+	public Long getId_escuela() {
+		return id_escuela;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setId_escuela(Long id_escuela) {
+		this.id_escuela = id_escuela;
 	}
 
 	public String getNombre() {
@@ -43,6 +50,46 @@ public class Escuela {
 
 	public void setZona(Zona zona) {
 		this.zona = zona;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public String getDirector() {
+		return director;
+	}
+
+	public void setDirector(String director) {
+		this.director = director;
+	}
+
+	public Long getCupomc() {
+		return cupomc;
+	}
+
+	public void setCupomc(Long cupomc) {
+		this.cupomc = cupomc;
+	}
+
+	public Long getCupoComedor() {
+		return cupoComedor;
+	}
+
+	public void setCupoComedor(Long cupoComedor) {
+		this.cupoComedor = cupoComedor;
+	}
+
+	public String getNombreInstitucion() {
+		return nombreInstitucion;
+	}
+
+	public void setNombreInstitucion(String nombreInstitucion) {
+		this.nombreInstitucion = nombreInstitucion;
 	}
 	
 	

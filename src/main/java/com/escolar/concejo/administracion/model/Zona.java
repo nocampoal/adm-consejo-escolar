@@ -17,7 +17,7 @@ import javax.validation.constraints.NotBlank;
 public class Zona {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long id_zona;
 	
 	@NotBlank
 	private String nombre;
@@ -25,12 +25,22 @@ public class Zona {
 	@OneToMany(mappedBy="zona")
 	private List<Escuela> escuelas;
 
-	public Long getId() {
-		return id;
+	
+
+	public Long getId_zona() {
+		return id_zona;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setId_zona(Long id_zona) {
+		this.id_zona = id_zona;
+	}
+
+	public List<Escuela> getEscuelas() {
+		return escuelas;
+	}
+
+	public void setEscuelas(List<Escuela> escuelas) {
+		this.escuelas = escuelas;
 	}
 
 	public String getNombre() {
