@@ -8,4 +8,5 @@ public interface ZoneService {
 	public List<Zona> getAllZones();
 	public Zona saveZone(Zona zone);
 	public Zona getZoneById(Long idZone);
+	public void deleteZone(Zona zone);
 }

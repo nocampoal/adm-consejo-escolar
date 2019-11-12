@@ -28,4 +28,10 @@ public class ZoneServiceImpl implements ZoneService{
 	public Zona getZoneById(Long idZone) {
 		return zoneRepository.findById(idZone).get();
 	}
+
+	@Override
+	public void deleteZone(Zona zone) {
+		zoneRepository.delete(zone);
+		
+	}
 }
