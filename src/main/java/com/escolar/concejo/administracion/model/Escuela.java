@@ -28,6 +28,11 @@ public class Escuela {
 
 	
 
+	public Escuela() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Long getId_escuela() {
 		return id_escuela;
 	}

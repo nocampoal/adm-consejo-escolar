@@ -5,4 +5,8 @@ import javax.persistence.Entity;
 @Entity
 public class Primaria extends Escuela {
 
+	public Primaria() {
+		super();
+	}
+
 }

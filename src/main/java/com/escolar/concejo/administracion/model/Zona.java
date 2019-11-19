@@ -30,6 +30,10 @@ public class Zona {
 
 	
 
+	public Zona() {
+		super();
+	}
+
 	public Long getId_zona() {
 		return id_zona;
 	}

@@ -5,19 +5,26 @@ import javax.persistence.Entity;
 @Entity
 public class Secundaria extends Escuela {
 	private Long cupoCena;
-	private String tipo;  //tipo que?  //simple doble completa
+	private String tipoJornada;   //simple doble completa
+	
+	
+	
+	public Secundaria() {
+		super();	
+	}
 	public Long getCupoCena() {
 		return cupoCena;
 	}
 	public void setCupoCena(Long cupoCena) {
 		this.cupoCena = cupoCena;
 	}
-	public String getTipo() {
-		return tipo;
+	public String getTipoJornada() {
+		return tipoJornada;
 	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setTipoJornada(String tipoJornada) {
+		this.tipoJornada = tipoJornada;
 	}
+	
 	
 	
 	

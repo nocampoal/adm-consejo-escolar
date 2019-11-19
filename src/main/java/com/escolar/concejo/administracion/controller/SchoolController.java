@@ -30,45 +30,47 @@ public class SchoolController {
 	private SchoolService schoolService;
 	
 	@GetMapping(path = "/getAll",produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Escuela> getAllSchools(){
-		log.info("CALL method: getAllSchools() ");
-		return schoolService.getAllSchool();
+	public ResponseEntity<List<Escuela>> getAllSchools(){
+		log.info("call method getAllSchools() ");
+		List<Escuela> schools = schoolService.getAllSchool();
+		return new ResponseEntity<>(schools, HttpStatus.OK);
 	}
 	
 	@PostMapping(path = "/save",produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Escuela> saveSchool(@RequestBody Escuela school)  {
-		log.info("CALL method: saveSchool() ");
+		log.info("call method saveSchool() ");
 		try {
 			schoolService.saveSchool(school);
 		} 
 		catch (Exception e) {
-			log.error("saveSchool error: "+e.getMessage());
+			 log.error("saveSchool method error",e);
 			 return new ResponseEntity<>(school, HttpStatus.NOT_FOUND); 
 		}
 		 return new ResponseEntity<>(school, HttpStatus.OK); 
 	 }
 	
 
-	@GetMapping(path = "/{idZone}",produces=MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path = "/{idSchool}",produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Escuela> findSchoolById(@PathVariable Long idSchool) {
 			Escuela school = new Escuela();
 			try {
 				school = schoolService.getSchoolById(idSchool);
 			} catch (Exception e) {
-				log.error("findZoneById error :"+e.getMessage());
 				log.error("Error in find by zone", e);
 				return  new ResponseEntity<>(school, HttpStatus.BAD_REQUEST);
 			}
 			return new ResponseEntity<>(school, HttpStatus.OK); 
 	}
 	
-	@PostMapping(path = "/delete")   //AFINAR EL RESPONSE DE ESTE METODO DELETE
-	public void deleteZone(@RequestBody Escuela school){
+	@PostMapping(path = "/delete")  
+	public ResponseEntity<Void> deleteSchool(@RequestBody Escuela school){
 		try {
+			log.info("call method deleteSchool");
 			schoolService.deleteSchool(school);
 		} catch (Exception e){
 			log.error("Error removing zone "+school.getNombre(), e);
 		}
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
 }
