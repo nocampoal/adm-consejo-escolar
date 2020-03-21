@@ -1,4 +1,4 @@
-package com.escolar.concejo.administracion.service;
+package com.escolar.concejo.administracion.service.impl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.escolar.concejo.administracion.model.Escuela;
 import com.escolar.concejo.administracion.repository.SchoolRepository;
+import com.escolar.concejo.administracion.service.SchoolService;
 
 @Service
 public class SchoolServiceImpl implements SchoolService{

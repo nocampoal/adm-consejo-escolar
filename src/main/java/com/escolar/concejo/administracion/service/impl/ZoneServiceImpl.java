@@ -1,4 +1,4 @@
-package com.escolar.concejo.administracion.service;
+package com.escolar.concejo.administracion.service.impl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.escolar.concejo.administracion.model.Zona;
 import com.escolar.concejo.administracion.repository.ZoneRepository;
+import com.escolar.concejo.administracion.service.ZoneService;
 
 @Service
 public class ZoneServiceImpl implements ZoneService{
