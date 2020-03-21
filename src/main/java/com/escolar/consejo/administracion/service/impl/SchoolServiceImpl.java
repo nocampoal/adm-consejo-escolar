@@ -1,13 +1,13 @@
-package com.escolar.concejo.administracion.service.impl;
+package com.escolar.consejo.administracion.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.escolar.concejo.administracion.model.Escuela;
-import com.escolar.concejo.administracion.repository.SchoolRepository;
-import com.escolar.concejo.administracion.service.SchoolService;
+import com.escolar.consejo.administracion.model.Escuela;
+import com.escolar.consejo.administracion.repository.SchoolRepository;
+import com.escolar.consejo.administracion.service.SchoolService;
 
 @Service
 public class SchoolServiceImpl implements SchoolService{

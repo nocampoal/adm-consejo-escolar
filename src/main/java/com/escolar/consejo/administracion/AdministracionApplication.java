@@ -1,4 +1,4 @@
-package com.escolar.concejo.administracion;
+package com.escolar.consejo.administracion;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

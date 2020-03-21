@@ -1,4 +1,4 @@
-package com.escolar.concejo.administracion.model;
+package com.escolar.consejo.administracion.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

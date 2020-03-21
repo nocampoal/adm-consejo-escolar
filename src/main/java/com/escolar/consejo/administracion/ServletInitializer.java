@@ -1,4 +1,4 @@
-package com.escolar.concejo.administracion;
+package com.escolar.consejo.administracion;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

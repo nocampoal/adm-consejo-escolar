@@ -1,13 +1,13 @@
-package com.escolar.concejo.administracion.service.impl;
+package com.escolar.consejo.administracion.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.escolar.concejo.administracion.model.Menu;
-import com.escolar.concejo.administracion.repository.MenuRepository;
-import com.escolar.concejo.administracion.service.MenuService;
+import com.escolar.consejo.administracion.model.Menu;
+import com.escolar.consejo.administracion.repository.MenuRepository;
+import com.escolar.consejo.administracion.service.MenuService;
 
 @Service
 public class MenuServiceImpl implements MenuService{

@@ -1,8 +1,8 @@
-package com.escolar.concejo.administracion.service;
+package com.escolar.consejo.administracion.service;
 
 import java.util.List;
 
-import com.escolar.concejo.administracion.model.Escuela;
+import com.escolar.consejo.administracion.model.Escuela;
 
 
 public interface SchoolService {

@@ -1,4 +1,4 @@
-package com.escolar.concejo.administracion.model;
+package com.escolar.consejo.administracion.model;
 
 import java.util.Date;
 import java.util.List;

@@ -1,13 +1,13 @@
-package com.escolar.concejo.administracion.service.impl;
+package com.escolar.consejo.administracion.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.escolar.concejo.administracion.model.Zona;
-import com.escolar.concejo.administracion.repository.ZoneRepository;
-import com.escolar.concejo.administracion.service.ZoneService;
+import com.escolar.consejo.administracion.model.Zona;
+import com.escolar.consejo.administracion.repository.ZoneRepository;
+import com.escolar.consejo.administracion.service.ZoneService;
 
 @Service
 public class ZoneServiceImpl implements ZoneService{

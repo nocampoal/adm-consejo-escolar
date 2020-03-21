@@ -1,4 +1,4 @@
-package com.escolar.concejo.administracion.controller;
+package com.escolar.consejo.administracion.controller;
 
 import java.util.List;
 
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.escolar.concejo.administracion.model.Zona;
-import com.escolar.concejo.administracion.service.ZoneService;
+import com.escolar.consejo.administracion.model.Zona;
+import com.escolar.consejo.administracion.service.ZoneService;
 
 @RestController
 @CrossOrigin("*")
