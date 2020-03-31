@@ -2,8 +2,8 @@ package com.escolar.consejo.administracion.controller;
 
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -23,54 +23,34 @@ import com.escolar.consejo.administracion.service.MenuService;
 @CrossOrigin("*")
 @RequestMapping("/menu")
 public class MenuController {
-	private static final Log log = LogFactory.getLog(MenuController.class);
+	private static final Logger log = LoggerFactory.getLogger(MenuController.class);
 
-	
-	
+
 	@Autowired
 	private MenuService menuService;
 	
 	@GetMapping(path = "/getAll",produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Menu>> getAllMenu(){
-		log.info("call method getAllMenus() ");
-		List<Menu> menus = menuService.getAllMenu();
-		return new ResponseEntity<>(menus, HttpStatus.OK);
+		log.debug("call method getAllMenus() ");
+		return ResponseEntity.ok(menuService.getAllMenu());
 	}
 	
 	@PostMapping(path = "/save",produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Menu> saveMenu(@RequestBody Menu menu)  {
-		log.info("call method saveMenu() ");
-		try {
-			menuService.saveMenu(menu);
-		} 
-		catch (Exception e) {
-			 log.error("Save menu method error",e);
-			 return new ResponseEntity<>(menu, HttpStatus.NOT_FOUND); 
-		}
-		 return new ResponseEntity<>(menu, HttpStatus.OK); 
+		log.debug("Call saveMenu method");
+		return ResponseEntity.ok(menuService.saveMenu(menu));
 	 }
 	
-
 	@GetMapping(path = "/{idMenu}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Menu> findMenuById(@PathVariable Long idMenu) {
-			Menu menu = new Menu();
-			try {
-				menu = menuService.getMenuById(idMenu);
-			} catch (Exception e) {
-				log.error("Error in find by menu", e);
-				return  new ResponseEntity<>(menu, HttpStatus.BAD_REQUEST);
-			}
-			return new ResponseEntity<>(menu, HttpStatus.OK); 
+	public ResponseEntity<Menu> findMenuById(@PathVariable Long id) {
+		log.debug("Call method findMenuByID");
+		return ResponseEntity.ok(menuService.getMenuById(id));
 	}
 	
 	@PostMapping(path = "/delete")  
 	public ResponseEntity<Void> deleteMenu(@RequestBody Menu menu){
-		try {
-			log.info("call method deleteMenu");
-			menuService.deleteMenu(menu);
-		} catch (Exception e){
-			log.error("Error removing menu "+menu.getNombre(), e);
-		}
+		log.debug("call method deleteMenu");
+		menuService.deleteMenu(menu);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 

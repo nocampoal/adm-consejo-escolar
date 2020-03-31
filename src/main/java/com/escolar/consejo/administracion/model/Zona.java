@@ -12,10 +12,15 @@ import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.Getter;
+import lombok.Setter;
+
 
 
 @Entity
 @Table(name = "zona")
+@Getter
+@Setter
 public class Zona {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,39 +29,10 @@ public class Zona {
 	@NotBlank
 	private String nombre;
 	
+	private Integer codigoPostal;
+	
 	@OneToMany(mappedBy="zona")
 	@JsonIgnore
 	private List<Escuela> escuelas;
 
-	
-
-	public Zona() {
-		super();
-	}
-
-	public Long getId_zona() {
-		return id_zona;
-	}
-
-	public void setId_zona(Long id_zona) {
-		this.id_zona = id_zona;
-	}
-
-	public List<Escuela> getEscuelas() {
-		return escuelas;
-	}
-
-	public void setEscuelas(List<Escuela> escuelas) {
-		this.escuelas = escuelas;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	
-	
 }
